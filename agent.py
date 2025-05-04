@@ -10,7 +10,7 @@ def agent():
         print()
         data={
             "model":"llama3.2",
-            "prompt":f"Classify whether this text is asking how about 'how I am doing? checking up on me? Seeing what's new?' things of this nature, respond with just a 'yes' or 'no' dont include a period, {email['body']}",
+            "prompt":f"Classify whether this text is asking how about 'how I am doing? checking up on me? Seeing what's new?' things of this nature that are asking about my well being, respond with just a 'yes' or 'no' dont include a period, {email['body']}",
             "stream": False
         }
         url="http://localhost:11434/api/generate"
