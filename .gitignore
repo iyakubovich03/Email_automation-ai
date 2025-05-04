@@ -1,5 +1,6 @@
 .DS_Store
-
+credentials.json
+token.pickle
 _pycache__/
 *.pyc
 

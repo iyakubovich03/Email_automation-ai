@@ -51,7 +51,7 @@ def get_unread_emails_last_24h():
         ).execute()
         
         messages = results.get('messages', [])
-        print(messages)
+        
 
         if not messages:
             print('No unread messages found in the last 24 hours.')
@@ -65,7 +65,7 @@ def get_unread_emails_last_24h():
                 id=message['id'],
                 format='full'
             ).execute()
-            print(message)
+           
             
             headers = msg['payload']['headers']
             subject = next((h['value'] for h in headers if h['name'] == 'Subject'), 'No Subject')
@@ -110,6 +110,8 @@ def send_email(email_address, subj, email_body):
     service = authenticate() #auhtenticates getting toekn
     service.users().messages().send(userId="me", body={"raw": raw}).execute()#sends
 
+"""
+
 if __name__ == "__main__":
     emails = get_unread_emails_last_24h() #list of email each is a dicontary 
     for email in emails:
@@ -125,3 +127,4 @@ send_email("vanechkay@gmail.com","test","test")
 #have my tool method to send emails 
 
 #this file includes all the required functions to pull the email 
+"""
